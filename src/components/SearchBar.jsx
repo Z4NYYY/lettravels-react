@@ -15,6 +15,7 @@ export default function SearchBar() {
     Date: ${selectedDate}, 
     Province: ${selectedProvince}`);
   };
+
     return (
       <div className="relative -mt-16 mx-auto max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center">
         <input
@@ -27,7 +28,9 @@ export default function SearchBar() {
         <input type="date" className="px-4 py-2 border" value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)} // เก็บค่าที่เลือก
       />
-        <select className="px-4 py-2 border">
+        <select className="px-4 py-2 border"value={selectedProvince}
+        onChange={(e) => setSelectedProvince(e.target.value)} // เก็บค่าจังหวัดที่เลือก
+      >
           <option value="">Province</option>
           <option value="Bangkok">Bangkok</option>
           <option value="Phuket">Phuket</option>
