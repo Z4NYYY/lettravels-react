@@ -25,10 +25,12 @@ export default function SearchBar() {
           value={searchText}
         onChange={(e) => setSearchText(e.target.value)} // เก็บค่าที่ผู้ใช้กรอก
         />
-        <input type="date" className="px-4 py-2 border" value={selectedDate}
+        <input type="date" className="px-4 py-2 border" 
+        value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)} // เก็บค่าที่เลือก
       />
-        <select className="px-4 py-2 border"value={selectedProvince}
+        <select className="px-4 py-2 border"
+        value={selectedProvince}
         onChange={(e) => setSelectedProvince(e.target.value)} // เก็บค่าจังหวัดที่เลือก
       >
           <option value="">Province</option>
