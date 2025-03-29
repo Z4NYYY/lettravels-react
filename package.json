@@ -2,13 +2,21 @@
   "name": "travel-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@react-google-maps/api": "^2.20.5",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.90.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"
+    
+    
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
