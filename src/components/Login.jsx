@@ -1,17 +1,11 @@
 import React from "react";
+import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import { auth } from "../firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 export default function Login() {
-  const handleGoogleLogin = async () => {
+  const handleGoogleLogin = () => {
     const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("✅ Logged in user:", result.user);
-      window.location.href = "/";
-    } catch (error) {
-      console.error("❌ Login error:", error);
-    }
+    signInWithRedirect(auth, provider);
   };
 
   return (
@@ -36,6 +30,7 @@ export default function Login() {
           type="email"
           placeholder="อีเมล"
           className="w-full p-2 border border-gray-300 rounded-md mb-3"
+          disabled
         />
 
         <button

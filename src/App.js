@@ -1,40 +1,43 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar.jsx';
-import HeroSection from './components/HeroSection.jsx';
-import SearchBar from './components/SearchBar.jsx';
-import GoogleMapSection from './components/GoogleMapSection.jsx';
-import PopularLocations from './components/PopularLocations.jsx';
-import Footer from './components/Footer.jsx';
-import Chatbot from './components/Chatbot.jsx';
-import Login from './components/Login.jsx';
-import UserProvider from './contexts/UserContext.jsx';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import LocationDetail from './components/LocationDetail.jsx';
+import React, { useContext, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { getRedirectResult } from "firebase/auth";
+import { auth } from "./firebase.js";
+import { UserContext } from "./contexts/UserContext.jsx";
 
-function App() {
+import Navbar from "./components/Navbar.jsx";
+import HomePage from "./components/HomePage.jsx";
+import Login from "./components/Login.jsx";
+import LocationDetail from "./components/LocationDetail.jsx";
+import TravelGuide from "./components/TravelGuide.jsx";
+import TravelGuideDetail from "./components/TravelGuideDetail.jsx";
+
+export default function AppRoutes() {
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result?.user) {
+          setUser(result.user);
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.error("Login redirect error:", error);
+      });
+  }, []);
+
   return (
-    <UserProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <div>
-              <HeroSection />
-              <SearchBar />
-              <GoogleMapSection />
-              <PopularLocations />
-              <Footer />
-              <Chatbot />
-            </div>
-          } />
-          <Route path="/login" element={<Login />} />
-          <Route path="/location/:id" element={<LocationDetail />} />
-        </Routes>
-      </Router>
-    </UserProvider>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/location/:id" element={<LocationDetail />} />
+        <Route path="/guides" element={<TravelGuide />} />
+        <Route path="/guide/:id" element={<TravelGuideDetail />} />
+      </Routes>
+    </>
   );
 }
-
-export default App;

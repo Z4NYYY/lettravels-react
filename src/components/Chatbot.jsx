@@ -21,9 +21,10 @@ const TravelChatbot = () => {
   const sendMessage = async () => {
     if (!input.trim()) return;
     setLoading(true);
+  
     const userMessage = { role: "user", content: input };
     const newMessages = [...messages, userMessage];
-
+  
     const localReply = getLocalSuggestion(input);
     if (localReply) {
       const botMessage = { role: "assistant", content: localReply };
@@ -32,23 +33,36 @@ const TravelChatbot = () => {
       setLoading(false);
       return;
     }
-
+  
     try {
       const response = await fetch("http://localhost:5000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
       });
+  
       const data = await response.json();
-      const botMessage = { role: "assistant", content: data.reply };
-      setMessages([...newMessages, botMessage]);
+  
+      if (data.reply) {
+        const botMessage = { role: "assistant", content: data.reply };
+        setMessages([...newMessages, botMessage]);
+      } else {
+        throw new Error("ไม่มีคำตอบจาก API");
+      }
+  
     } catch (error) {
       console.error("Error fetching response:", error);
+      const fallbackMessage = {
+        role: "assistant",
+        content: "ขออภัย ขณะนี้บอทไม่สามารถให้บริการได้ กรุณาลองใหม่ภายหลัง",
+      };
+      setMessages([...newMessages, fallbackMessage]);
     }
-
+  
     setInput("");
     setLoading(false);
   };
+  
 
   return (
     <>

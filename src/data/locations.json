@@ -2,15 +2,15 @@
   {
     "id": 1,
     "name": "เกาะกระดาน",
-    "image": "/images/beach1.jpg",
+    "image": "/images/kradanbeach1.jpg",
     "description": "น้ำทะเลใส หาดทรายขาว",
     "details": "เกาะกระดานตั้งอยู่ในทะเลตรัง เป็นเกาะที่มีชายหาดที่เงียบสงบ น้ำทะเลสีฟ้าใส และเป็นหนึ่งในสถานที่ดำน้ำชมปะการังที่ดีที่สุดในประเทศไทย เหมาะสำหรับนักท่องเที่ยวที่ต้องการความผ่อนคลาย",
-    "rating": 8.7,
+    "rating": 4.7,
     "tags": ["ยอดนิยม", "เงียบสงบ", "ทะเลใส", "ธรรมชาติ"],
     "gallery": [
-      "/images/beach1.jpg",
-      "/images/beach1-1.webp",
-      "/images/beach1-3.jpg"
+      "/images/kradanbeach1.jpg",
+      "/images/kradanbeach1-1.jpg",
+      "/images/kradanbeach1-2.webp"
     ],
     "activities": [
       "ดำน้ำตื้นชมปะการัง",
@@ -25,15 +25,15 @@
   {
     "id": 2,
     "name": "อ่าวมาหยา",
-    "image": "/images/beach2.jpg",
+    "image": "/images/mayabeach1.jpg",
     "description": "หาดสวยงาม โอบล้อมด้วยภูเขา",
     "details": "อ่าวมาหยาเป็นหาดชื่อดังบนเกาะพีพีเล จังหวัดกระบี่ มีภูเขาหินปูนล้อมรอบ น้ำทะเลใสสีฟ้า เหมาะกับการว่ายน้ำและถ่ายรูปแบบธรรมชาติ",
-    "rating": 9.2,
+    "rating": 4.6,
     "tags": ["ยอดนิยม", "ทะเลใส"],
     "gallery": [
-      "/images/beach2.jpg",
-      "/images/beach2-2.jpg",
-      "/images/beach2-3.jpg"
+      "/images/mayabeach1.jpg",
+      "/images/mayabeach1-1.jpg",
+      "/images/mayabeach1-2.jpg"
     ],
     "activities": [
       "ว่ายน้ำ",
@@ -47,15 +47,15 @@
   {
     "id": 3,
     "name": "เกาะหลีเป๊ะ",
-    "image": "/images/beach3.jpg",
+    "image": "/images/leepaebeach1.jpg",
     "description": "เกาะสวรรค์แห่งอันดามัน",
     "details": "เกาะหลีเป๊ะตั้งอยู่ในทะเลอันดามัน จังหวัดสตูล เป็นที่รู้จักในชื่อ 'มัลดีฟส์เมืองไทย' ด้วยหาดทรายขาวละเอียดและน้ำทะเลใสสีน้ำเงิน",
-    "rating": 9.5,
+    "rating": 4.5,
     "tags": ["ยอดนิยม", "เหมาะกับครอบครัว", "ธรรมชาติ"],
     "gallery": [
-      "/images/beach3.jpg",
-      "/images/beach3-2.jpg",
-      "/images/beach3-3.jpg"
+      "/images/leepaebeach1.jpg",
+      "/images/leepaebeach1-1.jpg",
+      "/images/leepaebeach1-2.jpeg"
     ],
     "activities": [
       "พักผ่อนบนชายหาด",
@@ -69,15 +69,15 @@
   {
     "id": 4,
     "name": "หมู่เกาะสุรินทร์",
-    "image": "/images/beach4.jpg",
+    "image": "/images/surinbeach1.jpg",
     "description": "จุดดำน้ำที่สวยติดอันดับโลก",
     "details": "หมู่เกาะสุรินทร์ ตั้งอยู่ในจังหวัดพังงา เป็นพื้นที่อุทยานแห่งชาติที่ขึ้นชื่อเรื่องความอุดมสมบูรณ์ของปะการังและสัตว์ทะเล เหมาะสำหรับผู้ที่ชื่นชอบการดำน้ำแบบ snorkeling และ scuba diving",
-    "rating": 9.4,
+    "rating": 4.6,
     "tags": ["ธรรมชาติ", "ดำน้ำ", "เงียบสงบ"],
     "gallery": [
-      "/images/beach4-1.jpg",
-      "/images/beach4-2.jpg",
-      "/images/beach4-3.jpg"
+      "/images/surinbeach1.jpg",
+      "/images/surinbeach1-1.jpg",
+      "/images/surinbeach1-2.jpg"
     ],
     "activities": [
       "ดำน้ำดูปะการัง",
